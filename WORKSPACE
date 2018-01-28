@@ -1,3 +1,4 @@
+workspace(name = "repo_b")
 rules_scala_version="7d02925073f0c78f905d9ca51d0470ee2508c8f3"
 
 http_archive(
@@ -21,3 +22,10 @@ specs2_junit_repositories()
 # register default scala toolchain
 load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
 scala_register_toolchains()
+
+http_archive(
+             name = "repo_a",
+             url = "https://github.com/natansil/repo_a/archive/874a6d1ef9d3fb0e4534c131dfb6a1251e3f248b.zip",
+             type = "zip",
+             strip_prefix= "repo_a-874a6d1ef9d3fb0e4534c131dfb6a1251e3f248b"
+             )
